@@ -63,12 +63,12 @@ export default class AppsterController {
 
     processEnterButton = () => {
         let textField = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_TEXTFIELD).value;
+        this.model.view.hideDialog(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
         if(textField.length < 1 || this.model.getRecentWork(textField) !== null){
-            this.model.view.hideDialog(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL)
             this.model.view.showDialog(AppsterGUIId.APPSTER_CONFIRM_MODAL);
         } else {
-            this.model.prependWork();
-            this.model.view.refreshRecentWork(this.recentWork); 
+            this.model.addToList(textField);
+            this.model.view.refreshRecentWork(this.model.recentWork); 
         }
     }
 
@@ -182,8 +182,9 @@ export default class AppsterController {
     processConfirmDeleteWork = () => {
         // DELETE THE WORK
         this.model.view.hideDialog(AppsterGUIId.APPSTER_YES_NO_MODAL);
-        this.model.removeWork(this.model.getWorkToEdit());
-
+        //this.model.removeWork(this.model.getWorkToEdit());
+        this.model.removeWork(this.model.recentWork[0]);
+           
         // GO BACK TO THE HOME SCREEN
         this.model.goHome();
     }

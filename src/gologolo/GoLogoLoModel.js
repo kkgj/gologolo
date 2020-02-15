@@ -7,10 +7,10 @@ export default class GoLogoLoModel extends AppsterModel {
         this.currentWork = null;
     }
 
-    addLogo(name){
+    addToList(name){
         let work = new GoLogoLoLogo(name);
         this.prependWork(work);
-        this.view.refreshRecentWork(this.recentWork); 
+        //this.view.refreshRecentWork(this.recentWork); 
     }
 
     createNewWork(workName) {
