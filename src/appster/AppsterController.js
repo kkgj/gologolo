@@ -21,7 +21,7 @@ export default class AppsterController {
     registerEventHandler(id, eventName, callback) {
         // GET THE CONTROL IN THE GUI WITH THE CORRESPONDING id
         let control = document.getElementById(id);
-
+        console.log(control);
         // AND SETUP THE CALLBACK FOR THE SPECIFIED EVENT TYPE
         if (control)
             control.addEventListener(eventName, callback);
@@ -33,8 +33,7 @@ export default class AppsterController {
 
         // Cancel
         this.registerEventHandler(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CANCEL_BUTTON]);
-        // Enter
-        this.registerEventHandler(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_ENTER_BUTTON])
+        
         // Ok
         this.registerEventHandler(AppsterGUIId.APPSTER_CONFIRM_MODAL, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CANCEL_BUTTON])
 
@@ -45,6 +44,12 @@ export default class AppsterController {
         //YES NO
         this.registerEventHandler(AppsterGUIId.APPSTER_YES_NO_MODAL_NO_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CANCEL_DELETE_WORK]);
         this.registerEventHandler(AppsterGUIId.APPSTER_YES_NO_MODAL_YES_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CONFIRM_DELETE_WORK]);
+
+
+        this.registerEventHandler(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_ENTER_BUTTON]);   
+        
+        //Edit text
+        //this.registerEventHandler(AppsterGUIId.APPSTER_EDIT_TEXT_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_EDIT_TEXT]);   
 
 
         // AND THE MODAL BUTTONS
@@ -59,17 +64,6 @@ export default class AppsterController {
     processCancelButton = () => {
         this.model.view.hideDialog(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
         this.model.view.hideDialog(AppsterGUIId.APPSTER_CONFIRM_MODAL);
-    }
-
-    processEnterButton = () => {
-        let textField = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_TEXTFIELD).value;
-        this.model.view.hideDialog(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
-        if(textField.length < 1 || this.model.getRecentWork(textField) !== null){
-            this.model.view.showDialog(AppsterGUIId.APPSTER_CONFIRM_MODAL);
-        } else {
-            this.model.addToList(textField);
-            this.model.view.refreshRecentWork(this.model.recentWork); 
-        }
     }
 
     processCreateNewWork = () => {
@@ -150,6 +144,7 @@ export default class AppsterController {
 
         // START EDITING THE SELECTED WORK
         this.model.editWork(workName);
+        this.addFunction();
     }
 
     /**
@@ -159,7 +154,6 @@ export default class AppsterController {
      */
     processCancelDeleteWork = () => {
         // JUST HIDE THE DIALOG
-        console.log("Not working");
         this.model.view.hideDialog(AppsterGUIId.APPSTER_YES_NO_MODAL);
     }
 
@@ -197,5 +191,9 @@ export default class AppsterController {
     processDeleteWork() {
         // VERIFY VIA A DIALOG BOX
         window.todo.model.view.showDialog();
+    }
+
+    processEnterButton () {
+        // Define in child
     }
 }

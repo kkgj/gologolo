@@ -286,7 +286,7 @@ export default class AppsterView {
         return confirmModal;
     }
 
-    buildAppsterTextInputModal() {
+    buildAppsterTextInputModal(t1, t2) {
         let textModal = this.buildElement(  AppsterHTML.DIV, 
                                             AppsterGUIId.APPSTER_TEXT_INPUT_MODAL,
                                             [AppsterGUIClass.APPSTER_MODAL],
@@ -307,7 +307,7 @@ export default class AppsterView {
                                                 "",
                                                 [],
                                                 [],
-                                                AppsterText.APPSTER_TEXT_INPUT_MODAL_PROMPT_TEXT);
+                                                t1);
         let textFieldAttributes = [];
         textFieldAttributes[AppsterHTML.TYPE] = AppsterHTML.TEXT;
         let textField = this.buildElement(  AppsterHTML.INPUT,
@@ -328,7 +328,7 @@ export default class AppsterView {
                                             "", 
                                             [AppsterGUIClass.APPSTER_MODAL_FOOTER],
                                             [],
-                                            AppsterText.APPSTER_TEXT_INPUT_MODAL_FOOTER_TEXT);
+                                            t2);
         p.appendChild(strong);
         section.appendChild(p);
         textFrame.appendChild(header);

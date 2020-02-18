@@ -26,7 +26,16 @@ export const GoLogoLoGUIId = {
     GOLOGOLO_BORDER_THICKNESS_SLIDER: "gologolo_border_thickness_slider",
     GOLOGOLO_PADDING_SLIDER: "gologolo_padding_slider",
     GOLOGOLO_MARGIN_SLIDER: "gologolo_margin_slider",
-    GOLOGOLO_TEXT: "gologolo_text"
+    GOLOGOLO_TEXT: "gologolo_text",
+
+    GoLogoLo_TEXT_INPUT_MODAL2: 'GoLogoLo_text_input_modal2',
+    GoLogoLo_TEXT_INPUT_MODAL_FRAME2: 'GoLogoLo_text_input_modal_frame2',
+    GoLogoLo_TEXT_INPUT_MODAL_HEADER2: 'GoLogoLo_text_input_modal_header2',
+    GoLogoLo_TEXT_INPUT_MODAL_SECTION2: 'GoLogoLo_text_input_modal_section2',
+    GoLogoLo_TEXT_INPUT_MODAL_TEXTFIELD2: "GoLogoLo_text_input_modal_textfield2",
+    GoLogoLo_TEXT_INPUT_MODAL_ENTER_BUTTON2: 'GoLogoLo_text_input_modal_enter_button2',
+    GoLogoLo_TEXT_INPUT_MODAL_CANCEL_BUTTON2: 'GoLogoLo_text_input_modal_cancel_button2',
+    GoLogoLo_TEXT_INPUT_MODAL_FOOTER2: 'GoLogoLo_text_input_modal_footer2',
 };
 
 export const GoLogoLoText = {
@@ -40,3 +49,7 @@ export const GoLogoLoText = {
     GOLOGOLO_PADDING_TEXT: "gologolo_padding_text",
     GOLOGOLO_MARGIN_TEXT: "gologolo_margin_text"
 }
+
+export const GoLogoLoCallback = {
+    GOLOGOLO_FONT_SIZE: "processFontSize"
+};
