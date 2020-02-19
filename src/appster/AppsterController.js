@@ -67,7 +67,7 @@ export default class AppsterController {
 
     processCreateNewWork = () => {
         let y = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON);
-        y.style.visibility = "show";
+        y.style.visibility = "visible";
         this.model.view.showDialog(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
         let x = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON2);
         x.style.visibility = AppsterHTML.HIDDEN;
@@ -120,14 +120,14 @@ export default class AppsterController {
      * This function is called when the user requests to create
      * new work.
      */
-    processCreateNewWork() {
-        console.log("processCreateNewWork");
+    // processCreateNewWork() {
+    //     console.log("processCreateNewWork");
 
-        // PROMPT FOR THE NAME OF THE NEW LIST
+    //     // PROMPT FOR THE NAME OF THE NEW LIST
         
-        // MAKE A BRAND NEW LIST
-        this.model.goList(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
-    }
+    //     // MAKE A BRAND NEW LIST
+    //     this.model.goList(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
+    // }
 
     /**
      * This function responds to when the user clicks on a link

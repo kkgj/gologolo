@@ -39,7 +39,7 @@ export default class GoLogoLoController
 
     processEditText = () => {
         let kk = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON2);
-        kk.style.visibility = "show";
+        kk.style.visibility = "visible";
         this.model.view.showDialog(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
         let yy = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON);
         yy.style.visibility = AppsterHTML.HIDDEN;
