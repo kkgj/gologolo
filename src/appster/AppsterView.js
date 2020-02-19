@@ -286,7 +286,7 @@ export default class AppsterView {
         return confirmModal;
     }
 
-    buildAppsterTextInputModal(t1, t2) {
+    buildAppsterTextInputModal() {
         let textModal = this.buildElement(  AppsterHTML.DIV, 
                                             AppsterGUIId.APPSTER_TEXT_INPUT_MODAL,
                                             [AppsterGUIClass.APPSTER_MODAL],
@@ -307,7 +307,7 @@ export default class AppsterView {
                                                 "",
                                                 [],
                                                 [],
-                                                t1);
+                                                AppsterText.APPSTER_TEXT_INPUT_MODAL_PROMPT_TEXT); //appster text. appster prompt
         let textFieldAttributes = [];
         textFieldAttributes[AppsterHTML.TYPE] = AppsterHTML.TEXT;
         let textField = this.buildElement(  AppsterHTML.INPUT,
@@ -319,6 +319,13 @@ export default class AppsterView {
                                             [AppsterGUIClass.APPSTER_MODAL_BUTTON],
                                             [],
                                             AppsterText.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON_TEXT);
+
+        let enterButton2 = this.buildElement(   AppsterHTML.BUTTON, 
+                                            AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON2,
+                                            [AppsterGUIClass.APPSTER_MODAL_BUTTON],
+                                            [],
+                                            AppsterText.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON_TEXT);
+                                            
         let cancelButton = this.buildElement(AppsterHTML.BUTTON, 
                                             AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON,
                                             [AppsterGUIClass.APPSTER_MODAL_BUTTON],
@@ -328,12 +335,13 @@ export default class AppsterView {
                                             "", 
                                             [AppsterGUIClass.APPSTER_MODAL_FOOTER],
                                             [],
-                                            t2);
+                                            AppsterText.APPSTER_TEXT_INPUT_MODAL_FOOTER_TEXT); // AppsterText.APPSTER INPUT MODAL FOOTER TEXT
         p.appendChild(strong);
         section.appendChild(p);
         textFrame.appendChild(header);
         textFrame.appendChild(section);
         section.appendChild(textField);
+        section.appendChild(enterButton2);
         section.appendChild(enterButton);
         section.appendChild(cancelButton);
         textFrame.appendChild(footer);

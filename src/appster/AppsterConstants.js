@@ -102,6 +102,7 @@ export const AppsterGUIId = {
     APPSTER_TEXT_INPUT_MODAL_SECTION: 'appster_text_input_modal_section',
     APPSTER_TEXT_INPUT_MODAL_TEXTFIELD: "appster_text_input_modal_textfield",
     APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON: 'appster_text_input_modal_enter_button',
+    APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON2: 'appster_text_input_modal_enter_button2',
     APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON: 'appster_text_input_modal_cancel_button',
     APPSTER_TEXT_INPUT_MODAL_FOOTER: 'appster_text_input_modal_footer'
 };

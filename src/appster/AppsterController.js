@@ -21,7 +21,6 @@ export default class AppsterController {
     registerEventHandler(id, eventName, callback) {
         // GET THE CONTROL IN THE GUI WITH THE CORRESPONDING id
         let control = document.getElementById(id);
-        console.log(control);
         // AND SETUP THE CALLBACK FOR THE SPECIFIED EVENT TYPE
         if (control)
             control.addEventListener(eventName, callback);
@@ -67,8 +66,11 @@ export default class AppsterController {
     }
 
     processCreateNewWork = () => {
-        console.log("showDialog");
+        let y = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON);
+        y.style.visibility = "show";
         this.model.view.showDialog(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
+        let x = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON2);
+        x.style.visibility = AppsterHTML.HIDDEN;
     }
 
 
