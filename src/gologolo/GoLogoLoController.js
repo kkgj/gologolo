@@ -30,7 +30,11 @@ export default class GoLogoLoController
         let textField = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_TEXTFIELD).value;
         this.model.view.hideDialog(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
         let text1 = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
-        text1.textContent = textField;
+        if(textField.length < 1){
+            text1.innerHTML = '&nbsp;';
+        } else {
+            text1.textContent = textField;
+        }
     }
 
     processEditText = () => {
