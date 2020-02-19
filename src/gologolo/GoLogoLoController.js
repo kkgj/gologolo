@@ -13,6 +13,8 @@ export default class GoLogoLoController
         this.registerEventHandler(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON2, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_EDIT_ENTER]);   
         // Font 
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_FONT_SIZE]);
+        // Border Radius
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_BORDER_RADIUS_SLIDER, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_BORDER_RADIUS]);
     }
 
     processEnterButton = () => {
@@ -46,17 +48,27 @@ export default class GoLogoLoController
     }
 
     processFontSize = () => {
-        let fontsize = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
+        let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
         let fontValue = document.getElementById(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER).value;
-        fontsize.style.fontSize = fontValue + "%";
+        text.style.fontSize = fontValue + "%";
     }
 
     addFunction = () => {
         this.registerEditEventHandlers();
-        let fontsize = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
+        let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
         let slider = document.getElementById(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER);
         slider.max = 600;
         slider.min = 100;
-        fontsize.style.fontSize = slider.value + "%";
+        text.style.fontSize = slider.value + "%";
+        let borderRad = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_RADIUS_SLIDER);
+        borderRad.max = 50;
+        borderRad.min = 0;
+        text.style.borderRadius = borderRad.value + "px";
+    }
+
+    processBorderRadius = () => {
+        let borderRad = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_RADIUS_SLIDER);
+        let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
+        text.style.borderRadius = borderRad.value + "px";
     }
 }

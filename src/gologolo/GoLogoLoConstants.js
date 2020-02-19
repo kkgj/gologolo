@@ -53,5 +53,6 @@ export const GoLogoLoText = {
 export const GoLogoLoCallback = {
     GOLOGOLO_FONT_SIZE: "processFontSize",
     GOLOGOLO_EDIT_TEXT: "processEditText",
-    GOLOGOLO_EDIT_ENTER: "processEditEnter"
+    GOLOGOLO_EDIT_ENTER: "processEditEnter",
+    GOLOGOLO_BORDER_RADIUS: "processBorderRadius"
 };
