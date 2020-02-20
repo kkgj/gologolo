@@ -15,6 +15,11 @@ export default class GoLogoLoController
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_FONT_SIZE]);
         // Border Radius
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_BORDER_RADIUS_SLIDER, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_BORDER_RADIUS]);
+        // Border Thickness
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_BORDER_THICKNESS_SLIDER, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_BORDER_THICKNESS]);
+        // Border Color
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_BORDER_COLOR_PICKER, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_BORDER_COLOR_PICKER]);
+
     }
 
     processEnterButton = () => {
@@ -42,9 +47,11 @@ export default class GoLogoLoController
     processEditText = () => {
         let kk = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON2);
         kk.style.visibility = "visible";
+        //kk.style.display = "Block";
         this.model.view.showDialog(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
         let yy = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON);
         yy.style.visibility = AppsterHTML.HIDDEN;
+        //yy.style.display = "None";
     }
 
     processFontSize = () => {
@@ -57,18 +64,38 @@ export default class GoLogoLoController
         this.registerEditEventHandlers();
         let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
         let slider = document.getElementById(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER);
-        slider.max = 600;
+        slider.max = 700;
         slider.min = 100;
         text.style.fontSize = slider.value + "%";
         let borderRad = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_RADIUS_SLIDER);
-        borderRad.max = 50;
+        borderRad.max = 45;
         borderRad.min = 0;
         text.style.borderRadius = borderRad.value + "px";
+        let borderThick = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_THICKNESS_SLIDER);
+        borderThick.max = 16;
+        borderThick.min = 0;
+        text.style.borderWidth = borderThick.value + "px";
+        text.style.borderStyle = "solid";
+        // Border Color
+        let borderCol = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_COLOR_PICKER).value;
+        text.style.borderColor = borderCol;
     }
 
     processBorderRadius = () => {
         let borderRad = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_RADIUS_SLIDER);
         let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
         text.style.borderRadius = borderRad.value + "px";
+    }
+
+    processBorderThickness = () => {
+        let borderThick = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_THICKNESS_SLIDER);
+        let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
+        text.style.borderWidth = borderThick.value + "px";
+    } 
+
+    processBorderColor = () => {
+        let borderCol = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_COLOR_PICKER).value;
+        let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
+        text.style.borderColor = borderCol;
     }
 }
