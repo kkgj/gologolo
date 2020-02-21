@@ -22,7 +22,12 @@ export default class GoLogoLoController
         // Padding
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_PADDING_SLIDER, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_PADDING]);
         // Margin
-        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_MARGIN_SLIDER, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_MARGIN_SLIDER]);
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_MARGIN_SLIDER, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_MARGIN]);
+        // Text Color
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_TEXT_COLOR_PICKER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_TEXT_COLOR]);
+        // Background Color
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_BACKGROUND_COLOR_PICKER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_BACKGROUND_COLOR]);
+
     }
 
     processEnterButton = () => {
@@ -67,7 +72,7 @@ export default class GoLogoLoController
         this.registerEditEventHandlers();
         let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
         let slider = document.getElementById(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER);
-        slider.max = 700;
+        slider.max = 600;
         slider.min = 100;
         text.style.fontSize = slider.value + "%";
         let borderRad = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_RADIUS_SLIDER);
@@ -87,6 +92,17 @@ export default class GoLogoLoController
         padding1.max = 30;
         padding1.min = 0;
         text.style.padding = padding1.value + "px";
+        // Margin
+        let marg = document.getElementById(GoLogoLoGUIId.GOLOGOLO_MARGIN_SLIDER);
+        marg.max = 30;
+        marg.min = 0;
+        text.style.margin = marg.value + "px";
+        // Text Color
+        let textCol = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT_COLOR_PICKER).value;
+        text.style.color = textCol;
+        // Background Color
+        let backCol = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BACKGROUND_COLOR_PICKER).value;
+        text.style.background = backCol;
     }
 
     processBorderRadius = () => {
@@ -102,7 +118,6 @@ export default class GoLogoLoController
     } 
 
     processBorderColor = () => {
-        console.log(111);
         let borderCol = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_COLOR_PICKER).value;
         let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
         console.log(borderCol);
@@ -116,6 +131,20 @@ export default class GoLogoLoController
     }
 
     processMargin = () => {
+        let marg = document.getElementById(GoLogoLoGUIId.GOLOGOLO_MARGIN_SLIDER).value;
+        let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
+        text.style.margin = marg + "px";
+    }
 
+    processTextColor = () => {
+        let textCol = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT_COLOR_PICKER).value;
+        let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
+        text.style.color = textCol;
+    }
+
+    processBackGroundColor = () => {
+        let backCol = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BACKGROUND_COLOR_PICKER).value;
+        let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
+        text.style.background = backCol;
     }
 }
