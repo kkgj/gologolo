@@ -383,7 +383,7 @@ export default class AppsterView {
             // MAKE A NEW DOM ELEMENT FOR THIS WORK
             let appWork = recentWork[i];
             let workElement = this.buildWorkListElement(appWork.getName());
-            
+            workElement.appendChild(document.createElement(AppsterHTML.BR));
             // AND ADD IT TO THE LIST
             recentWorkList.appendChild(workElement);
         }
