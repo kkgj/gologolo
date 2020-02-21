@@ -94,7 +94,7 @@ export default class GoLogoLoController
         text.style.padding = padding1.value + "px";
         // Margin
         let marg = document.getElementById(GoLogoLoGUIId.GOLOGOLO_MARGIN_SLIDER);
-        marg.max = 30;
+        marg.max = 200;
         marg.min = 0;
         text.style.margin = marg.value + "px";
         // Text Color
