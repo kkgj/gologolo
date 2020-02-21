@@ -19,7 +19,8 @@ export default class GoLogoLoController
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_BORDER_THICKNESS_SLIDER, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_BORDER_THICKNESS]);
         // Border Color
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_BORDER_COLOR_PICKER, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_BORDER_COLOR_PICKER]);
-
+        // Padding
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_PADDING_SLIDER, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_PADDING]);
     }
 
     processEnterButton = () => {
@@ -46,12 +47,12 @@ export default class GoLogoLoController
 
     processEditText = () => {
         let kk = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON2);
-        kk.style.visibility = "visible";
-        //kk.style.display = "Block";
+        //kk.style.visibility = "visible";
+        kk.style.display = "inline-block";
         this.model.view.showDialog(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
         let yy = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON);
-        yy.style.visibility = AppsterHTML.HIDDEN;
-        //yy.style.display = "None";
+        //yy.style.visibility = AppsterHTML.HIDDEN;
+        yy.style.display = "none";
     }
 
     processFontSize = () => {
@@ -79,6 +80,11 @@ export default class GoLogoLoController
         // Border Color
         let borderCol = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_COLOR_PICKER).value;
         text.style.borderColor = borderCol;
+        // Padding
+        let padding1 = document.getElementById(GoLogoLoGUIId.GOLOGOLO_PADDING_SLIDER);
+        padding1.max = 30;
+        padding1.min = 0;
+        text.style.padding = padding1.value + "px";
     }
 
     processBorderRadius = () => {
@@ -97,5 +103,11 @@ export default class GoLogoLoController
         let borderCol = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_COLOR_PICKER).value;
         let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
         text.style.borderColor = borderCol;
+    }
+
+    processPadding = () => {
+        let padding1 = document.getElementById(GoLogoLoGUIId.GOLOGOLO_PADDING_SLIDER).value;
+        let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
+        text.style.padding = padding1 + "px";
     }
 }

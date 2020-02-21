@@ -67,12 +67,12 @@ export default class AppsterController {
 
     processCreateNewWork = () => {
         let y = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON);
-        y.style.visibility = "visible";
-        //y.style.display = "Block";
+        //y.style.visibility = "visible";
+        y.style.display = "inline-block";
         this.model.view.showDialog(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
         let x = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON2);
-        x.style.visibility = AppsterHTML.HIDDEN;
-        //x.style.display = "None";
+        //x.style.visibility = AppsterHTML.HIDDEN;
+        x.style.display = "none";
     }
 
 
