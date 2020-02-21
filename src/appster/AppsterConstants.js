@@ -136,7 +136,8 @@ export const AppsterHTML = {
     STRONG: "strong",
     TEXT: "text",
     TYPE: "type",
-    UL: "ul"
+    UL: "ul",
+    CHANGE: "change"
 };
 
 /**

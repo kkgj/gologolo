@@ -48,5 +48,6 @@ export const GoLogoLoCallback = {
     GOLOGOLO_BORDER_RADIUS: "processBorderRadius",
     GOLOGOLO_BORDER_THICKNESS: "processBorderThickness",
     GOLOGOLO_BORDER_COLOR: "processBorderColor",
-    GOLOGOLO_PADDING: "processPadding"
+    GOLOGOLO_PADDING: "processPadding",
+    GOLOGOLO_MARGIN: "processMargin"
 };
