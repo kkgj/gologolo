@@ -49,6 +49,7 @@ export default class GoLogoLoController
             text1.innerHTML = '&nbsp;';
         } else {
             text1.textContent = textField;
+            this.model.workToEdit.setText(textField);
         }
     }
 
@@ -66,6 +67,7 @@ export default class GoLogoLoController
         let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
         let fontValue = document.getElementById(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER).value;
         text.style.fontSize = fontValue + "%";
+        this.model.workToEdit.setFontSize(fontValue);
     }
 
     addFunction = () => {
@@ -106,15 +108,17 @@ export default class GoLogoLoController
     }
 
     processBorderRadius = () => {
-        let borderRad = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_RADIUS_SLIDER);
+        let borderRad = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_RADIUS_SLIDER).value;
         let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
-        text.style.borderRadius = borderRad.value + "px";
+        text.style.borderRadius = borderRad + "px";
+        this.model.workToEdit.setBorderRadius(borderRad);
     }
 
     processBorderThickness = () => {
         let borderThick = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_THICKNESS_SLIDER);
         let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
         text.style.borderWidth = borderThick.value + "px";
+        this.model.workToEdit.setBorderThickness(borderThick);
     } 
 
     processBorderColor = () => {
@@ -122,29 +126,34 @@ export default class GoLogoLoController
         let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
         console.log(borderCol);
         text.style.borderColor = borderCol;
+        this.model.workToEdit.setBorderColor(borderCol);
     }
 
     processPadding = () => {
         let padding1 = document.getElementById(GoLogoLoGUIId.GOLOGOLO_PADDING_SLIDER).value;
         let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
         text.style.padding = padding1 + "px";
+        this.model.workToEdit.setPadding(padding1);
     }
 
     processMargin = () => {
         let marg = document.getElementById(GoLogoLoGUIId.GOLOGOLO_MARGIN_SLIDER).value;
         let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
         text.style.margin = marg + "px";
+        this.model.workToEdit.setMargin(marg);
     }
 
     processTextColor = () => {
         let textCol = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT_COLOR_PICKER).value;
         let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
         text.style.color = textCol;
+        this.model.workToEdit.setTextColor(textCol);
     }
 
     processBackGroundColor = () => {
         let backCol = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BACKGROUND_COLOR_PICKER).value;
         let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
         text.style.background = backCol;
+        this.model.workToEdit.setBackgroundColor(backCol);
     }
 }
