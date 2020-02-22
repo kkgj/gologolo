@@ -115,9 +115,9 @@ export default class GoLogoLoController
     }
 
     processBorderThickness = () => {
-        let borderThick = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_THICKNESS_SLIDER);
+        let borderThick = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_THICKNESS_SLIDER).value;
         let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
-        text.style.borderWidth = borderThick.value + "px";
+        text.style.borderWidth = borderThick + "px";
         this.model.workToEdit.setBorderThickness(borderThick);
     } 
 
