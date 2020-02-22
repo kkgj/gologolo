@@ -30,6 +30,11 @@ export default class GoLogoLoController
 
     }
 
+    processGoHome = () => {
+        console.log("processGoHome");
+        this.model.goHome();
+    }
+
     processEnterButton = () => {
         let textField = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_TEXTFIELD).value;
         this.model.view.hideDialog(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
@@ -65,8 +70,8 @@ export default class GoLogoLoController
             let originalText = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT).textContent;
             textValue.value = originalText;
         }
-        // let footer = document.querySelector("." + AppsterGUIClass.APPSTER_MODAL_FOOTER);
-        // footer.textContent = "Editing Logo Name";
+        let footer = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_FOOTER);
+        footer.textContent = "Editing Logo Name";
     }
 
     processFontSize = () => {

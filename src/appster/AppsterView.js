@@ -332,7 +332,7 @@ export default class AppsterView {
                                             [],
                                             AppsterText.APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON_TEXT);
         let footer = this.buildElement(     AppsterHTML.FOOTER, 
-                                            "", 
+                                            AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_FOOTER, 
                                             [AppsterGUIClass.APPSTER_MODAL_FOOTER],
                                             [],
                                             AppsterText.APPSTER_TEXT_INPUT_MODAL_FOOTER_TEXT); // AppsterText.APPSTER INPUT MODAL FOOTER TEXT

@@ -1,6 +1,7 @@
 import AppsterModel from '../appster/AppsterModel.js'
 import GoLogoLoLogo from './GoLogoLoLogo.js'
 import { GoLogoLoGUIClass } from './GoLogoLoConstants.js';
+import { AppsterGUIId } from '../appster/AppsterConstants.js'
 
 export default class GoLogoLoModel extends AppsterModel {
     constructor() {
@@ -48,6 +49,12 @@ export default class GoLogoLoModel extends AppsterModel {
         }
 
         return appWork;
+    }
+
+    goHome() {
+        //this.view.goToHomeScreen();
+        let footer = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_FOOTER);
+        footer.textContent = "Creating New Logo";
     }
 
     updateText() {
