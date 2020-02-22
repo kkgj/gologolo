@@ -148,7 +148,12 @@ export default class AppsterController {
 
         // START EDITING THE SELECTED WORK
         this.model.editWork(workName);
+        // add functionalities such as sliders inside a link
         this.addFunction();
+    }
+
+    addFunction = () => {
+        // Define in Child 
     }
 
     /**

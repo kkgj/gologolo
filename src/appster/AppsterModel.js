@@ -124,5 +124,9 @@ export default class AppsterModel {
         this.view.loadListData(this.listToEdit);
     }
 
+    addToList(name) {
+        // Define in child class
+    }
+
     //getWorkToEdit(){}
 }

@@ -37,7 +37,7 @@ export default class GoLogoLoController
             this.model.view.showDialog(AppsterGUIId.APPSTER_CONFIRM_MODAL);
         } else {
             this.model.addToList(textField);
-            this.model.view.refreshRecentWork(this.model.recentWork); 
+            //this.model.view.refreshRecentWork(this.model.recentWork); 
         }
     }
 
