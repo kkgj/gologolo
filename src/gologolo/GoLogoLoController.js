@@ -85,7 +85,7 @@ export default class GoLogoLoController
         this.registerEditEventHandlers();
         let text = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
         let slider = document.getElementById(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER);
-        slider.max = 600;
+        slider.max = 550;
         slider.min = 100;
         text.style.fontSize = slider.value + "%";
         let borderRad = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_RADIUS_SLIDER);
