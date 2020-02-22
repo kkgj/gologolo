@@ -1,5 +1,5 @@
 import AppsterController from '../appster/AppsterController.js'
-import {AppsterHTML, AppsterGUIId, AppsterCallback} from '../appster/AppsterConstants.js'
+import {AppsterHTML, AppsterGUIId, AppsterCallback, AppsterGUIClass} from '../appster/AppsterConstants.js'
 import { GoLogoLoGUIId, GoLogoLoCallback, GoLogoLoText } from './GoLogoLoConstants.js';
 
 export default class GoLogoLoController
@@ -12,17 +12,17 @@ export default class GoLogoLoController
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_EDIT_TEXT_BUTTON, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_EDIT_TEXT]);   
         this.registerEventHandler(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON2, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_EDIT_ENTER]);   
         // Font 
-        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_FONT_SIZE]);
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER, AppsterHTML.INPUT, this[GoLogoLoCallback.GOLOGOLO_FONT_SIZE]);
         // Border Radius
-        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_BORDER_RADIUS_SLIDER, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_BORDER_RADIUS]);
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_BORDER_RADIUS_SLIDER, AppsterHTML.INPUT, this[GoLogoLoCallback.GOLOGOLO_BORDER_RADIUS]);
         // Border Thickness
-        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_BORDER_THICKNESS_SLIDER, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_BORDER_THICKNESS]);
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_BORDER_THICKNESS_SLIDER, AppsterHTML.INPUT, this[GoLogoLoCallback.GOLOGOLO_BORDER_THICKNESS]);
         // Border Color
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_BORDER_COLOR_PICKER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_BORDER_COLOR]);
         // Padding
-        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_PADDING_SLIDER, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_PADDING]);
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_PADDING_SLIDER, AppsterHTML.INPUT, this[GoLogoLoCallback.GOLOGOLO_PADDING]);
         // Margin
-        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_MARGIN_SLIDER, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_MARGIN]);
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_MARGIN_SLIDER, AppsterHTML.INPUT, this[GoLogoLoCallback.GOLOGOLO_MARGIN]);
         // Text Color
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_TEXT_COLOR_PICKER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_TEXT_COLOR]);
         // Background Color
@@ -37,7 +37,6 @@ export default class GoLogoLoController
             this.model.view.showDialog(AppsterGUIId.APPSTER_CONFIRM_MODAL);
         } else {
             this.model.addToList(textField);
-            //this.model.view.refreshRecentWork(this.model.recentWork); 
         }
     }
 
@@ -61,6 +60,13 @@ export default class GoLogoLoController
         let yy = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON);
         //yy.style.visibility = AppsterHTML.HIDDEN;
         yy.style.display = "none";
+        if(yy.style.display === "none"){
+            let textValue = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_TEXTFIELD);
+            let originalText = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT).textContent;
+            textValue.value = originalText;
+        }
+        // let footer = document.querySelector("." + AppsterGUIClass.APPSTER_MODAL_FOOTER);
+        // footer.textContent = "Editing Logo Name";
     }
 
     processFontSize = () => {
@@ -78,11 +84,11 @@ export default class GoLogoLoController
         slider.min = 100;
         text.style.fontSize = slider.value + "%";
         let borderRad = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_RADIUS_SLIDER);
-        borderRad.max = 45;
+        borderRad.max = 70;
         borderRad.min = 0;
         text.style.borderRadius = borderRad.value + "px";
         let borderThick = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_THICKNESS_SLIDER);
-        borderThick.max = 16;
+        borderThick.max = 26;
         borderThick.min = 0;
         text.style.borderWidth = borderThick.value + "px";
         text.style.borderStyle = "solid";
@@ -91,7 +97,7 @@ export default class GoLogoLoController
         text.style.borderColor = borderCol;
         // Padding
         let padding1 = document.getElementById(GoLogoLoGUIId.GOLOGOLO_PADDING_SLIDER);
-        padding1.max = 30;
+        padding1.max = 45;
         padding1.min = 0;
         text.style.padding = padding1.value + "px";
         // Margin

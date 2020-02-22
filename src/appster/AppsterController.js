@@ -73,6 +73,10 @@ export default class AppsterController {
         let x = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON2);
         //x.style.visibility = AppsterHTML.HIDDEN;
         x.style.display = "none";
+        if(x.style.display === "none"){
+            let textValue = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_TEXTFIELD);
+            textValue.value = "";
+        }
     }
 
 
