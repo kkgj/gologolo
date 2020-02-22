@@ -52,7 +52,7 @@ export default class GoLogoLoModel extends AppsterModel {
     }
 
     goHome() {
-        //this.view.goToHomeScreen();
+        this.view.goToHomeScreen();
         let footer = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_FOOTER);
         footer.textContent = "Creating New Logo";
     }
