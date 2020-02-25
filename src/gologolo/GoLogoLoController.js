@@ -36,7 +36,7 @@ export default class GoLogoLoController
     }
 
     processEnterButton = () => {
-        let textField = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_TEXTFIELD).value;
+        let textField = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_TEXTFIELD).value.trim();
         this.model.view.hideDialog(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
         if(textField.length < 1 || this.model.getRecentWork(textField) !== null){
             this.model.view.showDialog(AppsterGUIId.APPSTER_CONFIRM_MODAL);
