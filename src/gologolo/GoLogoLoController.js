@@ -38,8 +38,16 @@ export default class GoLogoLoController
     processEnterButton = () => {
         let textField = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_TEXTFIELD).value.trim();
         this.model.view.hideDialog(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
+        let footer = document.getElementById(AppsterGUIId.APPSTER_CONFIRM_MODAL_FOOTER);
+        let text = document.getElementById(AppsterGUIId.APPSTER_CONFIRM_MODAL_TEXT);
         textField = textField.replace(/  +/g, ' ');
-        if(textField.length < 1 || this.model.getRecentWork(textField) !== null){
+        if(textField.length < 1) {
+            footer.innerHTML = "Empty Name";
+            text.innerHTML = "Illegal Name, logo name is empty";
+            this.model.view.showDialog(AppsterGUIId.APPSTER_CONFIRM_MODAL);
+        } else if (this.model.getRecentWork(textField) !== null) {
+            footer.innerHTML = "Duplicate Name";
+            text.innerHTML = "Illegal Name, logo already exists with that name";
             this.model.view.showDialog(AppsterGUIId.APPSTER_CONFIRM_MODAL);
         } else {
             this.model.addToList(textField);

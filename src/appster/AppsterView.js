@@ -262,7 +262,7 @@ export default class AppsterView {
                                             [AppsterGUIClass.APPSTER_MODAL_SECTION]);
         let p = this.buildElement(AppsterHTML.P);
         let strong = this.buildElement(     AppsterHTML.STRONG, 
-                                            "",
+                                            AppsterGUIId.APPSTER_CONFIRM_MODAL_TEXT,
                                             [],
                                             [],
                                             AppsterText.APPSTER_CONFIRM_MODAL_PROMPT_TEXT);
@@ -272,7 +272,7 @@ export default class AppsterView {
                                             [],
                                             AppsterText.APPSTER_CONFIRM_MODAL_OK_BUTTON_TEXT);
         let footer = this.buildElement(     AppsterHTML.FOOTER, 
-                                            "", 
+                                            AppsterGUIId.APPSTER_CONFIRM_MODAL_FOOTER, 
                                             [AppsterGUIClass.APPSTER_MODAL_FOOTER],
                                             [],
                                             AppsterText.APPSTER_CONFIRM_MODAL_FOOTER_TEXT);

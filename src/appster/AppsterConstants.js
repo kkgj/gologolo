@@ -96,6 +96,7 @@ export const AppsterGUIId = {
     APPSTER_CONFIRM_MODAL_SECTION: 'appster_confirm_modal_section',
     APPSTER_CONFIRM_MODAL_OK_BUTTON: 'appster_confirm_modal_ok_button',
     APPSTER_CONFIRM_MODAL_FOOTER: 'appster_confirm_frame',
+    APPSTER_CONFIRM_MODAL_TEXT: 'appster_confirm_text',
     APPSTER_TEXT_INPUT_MODAL: 'appster_text_input_modal',
     APPSTER_TEXT_INPUT_MODAL_FRAME: 'appster_text_input_modal_frame',
     APPSTER_TEXT_INPUT_MODAL_HEADER: 'appster_text_input_modal_header',
