@@ -43,6 +43,9 @@ export default class GoLogoLoController
             this.model.view.showDialog(AppsterGUIId.APPSTER_CONFIRM_MODAL);
         } else {
             this.model.addToList(textField);
+            // START EDITING THE SELECTED WORK
+            this.model.editWork(textField);
+            this.addFunction();
         }
     }
 
@@ -94,7 +97,7 @@ export default class GoLogoLoController
         borderRad.min = 0;
         text.style.borderRadius = borderRad.value + "px";
         let borderThick = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_THICKNESS_SLIDER);
-        borderThick.max = 26;
+        borderThick.max = 30;
         borderThick.min = 0;
         text.style.borderWidth = borderThick.value + "px";
         text.style.borderStyle = "solid";
